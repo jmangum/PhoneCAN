@@ -38,7 +38,8 @@ The Home Node (node 0), with is the one with the OLED display, allows one to dis
 * CircuitPython 9.1.1
 * All libraries from CircuitPython 9.x standard and community bundle (OLED button reader library was from community bundle)
 * Used cooperative multitasking (asyncio) to manage sensor read, CAN bus send, OLED display, and Adafruit IO upload tasks.
-  
+
+![Picture of home node LCD display.](docs/HomeNodePic2.jpg)
 Left: Home node (node 0) with 128x64 OLED Featherwing.  Right: Home node setup showing telephone jack connection (upper-left), battery backup power (lower-right), USB power connection (upper-middle), and environmental sensor (middle).
   
 Left: Send node (node 3) with ESP32-S3 (bottom) and CAN Bus Featherwing MCP2515 CAN controller (top).  Right: Send node setup with RJ11 breakout connecting CAN Bus Featherwing to telephone jack (top), battery backup power (center), USB power connection (left, off of photo), and environmental sensor (bottom).
