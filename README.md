@@ -39,5 +39,5 @@ The Home Node (node 0), with is the one with the OLED display, allows one to dis
 * All libraries from CircuitPython 9.x standard and community bundle (OLED button reader library was from community bundle)
 * Used cooperative multitasking (asyncio) to manage sensor read, CAN bus send, OLED display, and Adafruit IO upload tasks.
 
-See my [description document](docs/CAN_Bus_Home_Sensor_Network.docx) for photos of my four-node setup.
+See my [description document](docs/<CAN Bus Home Sensor Network.docx>) for photos of my four-node setup.
 
