@@ -7,6 +7,7 @@ Have you ever wondered what you can do with your unused twisted-pair telephone w
 # Hardware
 * Home Node (Node 0):
    - [Adafruit RP2040 CAN Feather with MCP2515 CAN Controller](https://www.adafruit.com/product/5724)
+   - <a href="[placeholder.com](https://www.adafruit.com/product/5724)" target="_blank">Adafruit RP2040 CAN Feather with MCP2515 CAN Controller</a>
    - Adafruit Featherwing 128x64 OLED
 * Remote Nodes (Nodes 1 through 3):
    Nodes 1 and 2: Adafruit RP2040 CAN Feather with MCP2515 CAN Controller
