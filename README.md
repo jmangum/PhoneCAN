@@ -7,16 +7,15 @@ Have you ever wondered what you can do with your unused twisted-pair telephone w
 # Hardware
 * Home Node (Node 0):
    - [Adafruit RP2040 CAN Feather with MCP2515 CAN Controller](https://www.adafruit.com/product/5724)
-   - <a href="https://www.adafruit.com/product/5724" target="_blank">Adafruit RP2040 CAN Feather with MCP2515 CAN Controller</a>
-   - Adafruit Featherwing 128x64 OLED
+   - [Adafruit Featherwing 128x64 OLED](https://www.adafruit.com/product/4650)
 * Remote Nodes (Nodes 1 through 3):
-   Nodes 1 and 2: Adafruit RP2040 CAN Feather with MCP2515 CAN Controller
-   Node 3 (Send Node): Adafruit ESP32-S3 Feather with 4MB Flash 2MB PSRAM with Adafruit CAN Bus Featherwing MCP2515
+   - Nodes 1 and 2: [Adafruit RP2040 CAN Feather with MCP2515 CAN Controller](https://www.adafruit.com/product/5724)
+   - Node 3 (Send Node): [Adafruit ESP32-S3 Feather with 4MB Flash 2MB PSRAM](https://www.adafruit.com/product/5477) with [Adafruit CAN Bus Featherwing MCP2515](https://www.adafruit.com/product/5709)
 * Sensors:
-   3 – Adafruit Sensirion SHT41 Temperature and Humidity Sensor
-   1 – Adafruit MS8607 Pressure Humidity Temperature PHT Sensor
+   - 3 – [Adafruit Sensirion SHT41 Temperature and Humidity Sensor](https://www.adafruit.com/product/5776)
+   - 1 – [Adafruit MS8607 Pressure Humidity Temperature PHT Sensor](https://www.adafruit.com/product/4716)
 * CAN network wiring: Home telephone wiring (4 strand with 2 twisted pair; I believe that the standard is RJ-11)
-* All nodes connected to power using AC-to-UBS converters, and all nodes equipped with LiPo batteries.  Test of remote node with Adafruit 3.7v 2500Ah LiPo battery indicated that remote node can send measurements every second for about 1.5 days on battery power.
+* All nodes connected to power using AC-to-UBS converters, and all nodes equipped with LiPo batteries.  Test of remote node with [Adafruit 3.7v 2500Ah LiPo battery](https://www.adafruit.com/product/328) indicated that remote node can send measurements every second for about 1.5 days on battery power.
 
 This configuration results in needing to have two “listen” nodes: one for the real-time display (Home Node) and a second for sending measurements to Adafruit IO (Send Node).  This seemed to work fine for my application.  One could possibly reduce this to one listen node (by stacking the OLED on the ESP32-S3 Feather).  On the other hand, separating the send functionality from the real-time display meant that I could put the send node at one of the remote locations (which could be chosen to be more accessible to wifi).
 
@@ -40,9 +39,5 @@ The Home Node (node 0), with is the one with the OLED display, allows one to dis
 * All libraries from CircuitPython 9.x standard and community bundle (OLED button reader library was from community bundle)
 * Used cooperative multitasking (asyncio) to manage sensor read, CAN bus send, OLED display, and Adafruit IO upload tasks.
 
-![Picture of home node LCD display.](<img src="docs/HomeNodePic2.jpg" alt="drawing" width="200"/>)
-Left: Home node (node 0) with 128x64 OLED Featherwing.  Right: Home node setup showing telephone jack connection (upper-left), battery backup power (lower-right), USB power connection (upper-middle), and environmental sensor (middle).
-  
-Left: Send node (node 3) with ESP32-S3 (bottom) and CAN Bus Featherwing MCP2515 CAN controller (top).  Right: Send node setup with RJ11 breakout connecting CAN Bus Featherwing to telephone jack (top), battery backup power (center), USB power connection (left, off of photo), and environmental sensor (bottom).
-  
-Left: Standard remote node (node 1) RP2040 CAN Feather with MCP2515 CAN controller.  Right: Standard remote node setup with RP2040 CAN Feather controller (left), battery backup power (bottom), environmental sensor (bottom-right), and RJ11 breakout connecting CAN controller to telephone jack (right).
+See my [description document](docs/CAN_Bus_Home_Sensor_Network.docx) for photos of my four-node setup.
+
