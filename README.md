@@ -4,7 +4,7 @@ Jeff Mangum
 
 Have you ever wondered what you can do with your unused twisted-pair telephone wire running throughout your house?  Well, how about using it as the transport medium for a CAN bus network of environmental sensors?  This is a relatively easy project which uses Adafruit hardware and CiruitPython.
 
-# Hardware:
+# Hardware
 * Home Node (Node 0): 
    Adafruit RP2040 CAN Feather with MCP2515 CAN Controller
    Adafruit Featherwing 128x64 OLED
@@ -34,7 +34,7 @@ The Home Node (node 0), with is the one with the OLED display, allows one to dis
 | Black	| 5	| Ground |
 | Green	| 3	| L |
 
-# Software:
+# Software
 * CircuitPython 9.1.1
 * All libraries from CircuitPython 9.x standard and community bundle (OLED button reader library was from community bundle)
 * Used cooperative multitasking (asyncio) to manage sensor read, CAN bus send, OLED display, and Adafruit IO upload tasks.
