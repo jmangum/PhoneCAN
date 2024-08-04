@@ -38,6 +38,17 @@ The Home Node (node 0), with is the one with the OLED display, allows one to dis
 * CircuitPython 9.1.1
 * All libraries from CircuitPython 9.x standard and community bundle (OLED button reader library was from community bundle)
 * Used cooperative multitasking (asyncio) to manage sensor read, CAN bus send, OLED display, and Adafruit IO upload tasks.
+* Sample `code.py` for each node:
+  - [`code_humenode.py`](code_homenode.py): Home (node 0) with OLED display.  Allows one to check values for all nodes using OLED push-buttons.
+  - [`code_sendnode.py`](code_sendnode.py): Send (node 3) remote node which handles sending measurements to Adafruit IO on specified interval.
+  - [`code_remote1.py`](code_remote1.py]: Sample remote (node 1) node.
+  - [`code_remote2.py`](code_remote2.py]: Sample remote (node 2) node.
+* Operational Comments:
+  - OLED display button press response: Normally responds with updated values from requested node within a second, but sometimes might take two or three.
+  - Upload interval to Adafruit IO is a setable parameter (I used 15 minutes).
+  - I have not tested my CAN bus speed, but noted no dropped packets during my testing.  Note that my environment is a three-story house, so the twisted pair cable runs are quite long (hundreds of feet).
+  - My system comprised of four nodes is by no means a limit to the number of nodes one can have.
+  - I had to use the CircuitPython garbage collector in my send node as the averaging process over the specified upload to Adafruit IO interval sometimes uses a lot of memory.  I used a list comprehension, which I thought was pretty efficient, but perhaps there are more efficient means.
 
 See my [description document](<docs/CAN Bus Home Sensor Network.docx>) for photos of my four-node setup.
 
