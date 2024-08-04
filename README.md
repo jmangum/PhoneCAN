@@ -41,8 +41,8 @@ The Home Node (node 0), with is the one with the OLED display, allows one to dis
 * Sample `code.py` for each node:
   - [`code_humenode.py`](code_homenode.py): Home (node 0) with OLED display.  Allows one to check values for all nodes using OLED push-buttons.
   - [`code_sendnode.py`](code_sendnode.py): Send (node 3) remote node which handles sending measurements to Adafruit IO on specified interval.
-  - [`code_remote1.py`](code_remote1.py]: Sample remote (node 1) node.
-  - [`code_remote2.py`](code_remote2.py]: Sample remote (node 2) node.
+  - [`code_remote1.py`](code_remote1.py): Sample remote (node 1) node.
+  - [`code_remote2.py`](code_remote2.py): Sample remote (node 2) node.
 * Operational Comments:
   - OLED display button press response: Normally responds with updated values from requested node within a second, but sometimes might take two or three.
   - Upload interval to Adafruit IO is a setable parameter (I used 15 minutes).
